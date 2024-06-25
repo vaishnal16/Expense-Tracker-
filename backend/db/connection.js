@@ -10,6 +10,4 @@ mongoose.connect(connectionString)
 .catch((err)=>{
     console.log("mongo error ", err);
 })
-
-
 module.exports=connectToMongoDB 

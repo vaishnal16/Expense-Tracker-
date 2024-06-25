@@ -1,10 +1,19 @@
 const express = require('express');
-const {createCategaries}=require('../controllers/controllers');
+const controller=require('../controllers/controllers');
 
 const router=express.Router();
 
-router.post('/api/categaries',createCategaries);
+router.route('/api/categaries')
+      .post(controller.createCategaries)
+      .get(controller.getCategaries)
 
+router.route('/api/transactions')
+      .post(controller.createTransaction)
+      .get(controller.getTransaction)
+      .delete(controller.deleteTransaction)
+
+router.route('/api/labels')  
+      .get(controller.getLabels)    
 
 module.exports=router;
 
